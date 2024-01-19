@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to your custom CSS file -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- Link to Google Material Icons font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Link to Font Awesome for icons -->
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="main">
+                <p id="logo"><i class="fa fa-music"></i>Music</p>
+                <!-- Music player logo -->
+            </div>
+
+            <div class="top-bar">
+                <i class="material-icons">expand_more</i>
+                <!-- Expand button -->
+                <span>Now Playing</span>
+                <!-- Now Playing label -->
+                <i class="material-icons">more_horiz</i>
+                <!-- More options button -->
+            </div>
+
+            <div class="img-area">
+                <img src="images/music-1.jpg" alt="" />
+                <!-- Image area for album cover -->
+            </div>
+
+            <div class="song-details">
+                <p class="name"></p>
+                <!-- Song name -->
+                <p class="artist"></p>
+                <!-- Artist name -->
+            </div> 
+
+            <div class="progress-area">
+                <div class="progress-bar">
+                    <audio id="main-audio" src=""></audio>
+                    <!-- Main audio player -->
+                    <span></span>
+                    <!-- for Progress bar -->
+                </div>
+                <div class="song-timer">
+                    <span class="current-time">0:00</span>
+                    <!-- Current playback time -->
+                    <span class="max-duration">0:00</span>
+                    <!-- Maximum duration of the song -->
+                </div>
+            </div>
+
+            <div class="volume">
+                <p id="volume_show" style="background-color: rgb(82, 79, 79); color: bisque; border-radius: 50%;">92</p>
+                <!-- Volume percentage display -->
+                <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+                <!-- Volume icon -->
+                <input type="range" min="0" max="100" value="92" onchange="volume_change()" id="volume" />
+                <!-- Volume control slider -->
+            </div>
+
+            <div class="controls">
+                <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+                <!-- Repeat playlist button -->
+                <i id="prev" class="material-icons">skip_previous</i>
+                <!-- Previous song button -->
+                <div class="play-pause">
+                    <i class="material-icons play">play_arrow</i>
+                    <!-- Play/pause button -->
+                </div>
+                <i id="next" class="material-icons">skip_next</i>
+                <!-- Next song button -->
+                <i id="more-music" class="material-icons">queue_music</i>
+                <!-- More music options button -->
+            </div>
+
+            <div id="wave" >
+
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <!-- Visual representation of audio wave -->
+            </div>
+
+            <div class="music-list">
+                <div class="header">
+                    <div class="row">
+                        <i class="list material-icons">queue_music</i>
+                        <!-- Music list icon -->
+                        <span>Music list</span>
+                        <!-- Music list title -->
+                    </div>
+                    <i id="close" class="material-icons">close</i>
+                    <!-- Close music list button -->
+                </div>
+                <ul>
+                    <!-- List of music items dynamically generated from JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="music-list.js"></script>
+    <!-- Link to your JavaScript file for music list handling -->
+    <script src="script.js"></script>
+    <!-- Link to your main JavaScript file -->
+</body>
+
+</html>
